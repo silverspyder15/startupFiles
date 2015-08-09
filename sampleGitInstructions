@@ -1,0 +1,22 @@
+#SAMPLE GIT INSTRUCTIONS
+
+# To upload to a repository:
+
+To create a new repository on the command line.
+
+echo "# gdxg" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/silverspyder15/gdxg.git
+git push -u origin master
+
+
+To push files to an existing repository:
+
+git remote add origin https://github.com/silverspyder15/gdxg.git
+git push -u origin master
+
+# If the placeholder 'origin' already exists,
+git remote -v origin                                   # find out what it contains
+git remote rm origin 				       # Delete its contents.
