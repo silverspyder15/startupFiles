@@ -1,19 +1,25 @@
-#INSTALL='sudo apt-get install -y'
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+INSTALL='sudo apt-get install -y'
 $INSTALL vim
 #$INSTALL git-core
 $INSTALL emacs
 $INSTALL screen
 
 
-echo "\n#Aliases" >> ~/.bashrc
+echo "#Aliases" >> ~/.bashrc
 echo "alias home='cd ~'" >> ~/.bashrc
-echo "alias neutron='cd ~/workspaces/neutron'" >> ~/.bashrc
+echo "alias neutronWs='cd ~/workspaces/neutron'" >> ~/.bashrc
+echo "alias devstackWs='cd ~/workspaces/neutron'" >> ~/.bashrc
+
 
 #mkdir startUpDir
 #cd startUpDir
 #git clone https://github.com/silverspyder15/emacsLibs
-#cp .emacs ~/.
-#cp -r emacs ~/.
+cp emacsLibs/.emacs ~/.
+cp -r emacsLibs/emacs ~/.
 
 #git clone https://github.com/silverspyder15/startupConfFiles
 #cp devStack/local.conf ~/worksspaces/devstack/.
@@ -21,7 +27,7 @@ echo "alias neutron='cd ~/workspaces/neutron'" >> ~/.bashrc
 #cd ~
 #git clone https://github.com/silverspyder15/emacsLibs
 
-mkdir -p workspaces
+mkdir -p ~/workspaces
 # Clone code repositories
 cd ~/workspaces
 
@@ -33,6 +39,6 @@ git clone git://git.openstack.org/openstack/neutron.git
 
 
 # Setup devstack
-mv ~/startupFiles/devStackFiles/local.conf ~/workspaces/devstack/.
+cp ~/startupFiles/devStackFiles/local.conf ~/workspaces/devstack/.
 pushd ~/workspaces/devstack
 #./stack.sh
